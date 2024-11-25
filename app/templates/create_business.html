@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block head %}
+{% endblock head %}
+
+{% block content %}
+<h1>Add a new business</h1>
+<div>
+    <form method="POST" action="{{url_for('business.create')}}" autocomplete="off">
+        {{ form.hidden_tag() }}
+
+        <input type="hidden" name="owner_id" value="{{ current_user.id }}">
+
+        <label for="name">Business name:</label>
+        {{ form.name(size=32, autocomplete="off") }}
+        {% for error in form.name.errors %}
+            <small class="text-danger">{{ error }}</small>
+        {% endfor %}
+
+        <label for="email">Business email:</label>
+        {{ form.email(size=32, autocomplete="off") }}
+        {% for error in form.email.errors %}
+            <small class="text-danger">{{ error }}</small>
+        {% endfor %}
+
+        <label for="location">Business location:</label>
+        {{ form.location(size=32, autocomplete="off") }}
+        {% for error in form.location.errors %}
+            <small class="text-danger">{{ error }}</small>
+        {% endfor %}
+
+        <label for="description">About the business:</label>
+        {{ form.description(size=32, autocomplete="off") }}
+        {% for error in form.description.errors %}
+            <small class="text-danger">{{ error }}</small>
+        {% endfor %}
+
+        <label for="online_available">Online Business:</label>
+        {{ form.online_available(size=32, autocomplete="off") }}
+        {% for error in form.online_available.errors %}
+            <small class="text-danger">{{ error }}</small>
+        {% endfor %}
+
+        <label for="offline_available">Offline Available:</label>
+        {{ form.offline_available(size=32, autocomplete="off") }}
+        {% for error in form.offline_available.errors %}
+            <small class="text-danger">{{ error }}</small>
+        {% endfor %}
+
+        {{ form.submit() }}
+    </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block head %}
+{% endblock head %}
+
+{% block content %}
+<h1>Register Today</h1>
+<div>
+    <form method="POST" action="{{url_for('auth.register')}}" autocomplete="off">
+        {{ form.hidden_tag() }}
+
+        <label for="full_name">Name:</label>
+        {{ form.full_name(size=32, autocomplete="off") }}
+        {% for error in form.full_name.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+
+        <label for="username">Username:</label>
+        {{ form.username(size=32, autocomplete="off") }}
+        {% for error in form.username.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+
+        <label for="email">Email:</label>
+        {{ form.email(size=32, autocomplete="off") }}
+        {% for error in form.email.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+
+        <label for="phone">Phone:</label>
+        {{ form.phone(size=32, autocomplete="off") }}
+        {% for error in form.phone.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+
+        <label for="password">Password:</label>
+        {{ form.password(size=32, autocomplete="off") }}
+        {% for error in form.password.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+
+        <label for="confirm_password">Confirm Password:</label>
+        {{ form.confirm_password(size=32, autocomplete="off") }}
+        {% for error in form.confirm_password.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+
+        {{ form.accept_privacy_policy() }}
+        <label for="accept_privacy_policy">I accept the <a href="{{ url_for('documents.privacy_policy') }}">Privacy Policy</a><br></label>
+        {% for error in form.accept_privacy_policy.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+
+        {{ form.accept_terms_of_service() }}
+        <label for="accept_terms_of_service">I accept the <a href="{{ url_for('documents.terms_of_service') }}">Terms of Service</a><br></label>
+        {% for error in form.accept_terms_of_service.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+
+        <div class="checkbox-group">
+        </div>
+        <label for="is_admin">Is_Admin:</label>
+        {{ form.is_admin(size=32, autocomplete="off") }}
+        {{ form.submit() }}
+    </form>
+</div>
+<div class="border-top pt-3">
+    <small>
+        <h3>Already Have An Account? <a class="ml-2" href="{{ url_for('auth.login') }}">Sign In</a></small></h3>
+    </small>
+</div>
+{% endblock content %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Welcome, {{ current_user.name }}!</h2>
+<div class="dashboard">
+    <h3>Your Businesses</h3>
+    <ul>
+        {% for business in businesses %}
+        <li>
+            <h4>{{ business.name }}</h4>
+            <h4>Located in {{ business.location }}</h4>
+            <h4>About Us:</h4>
+            <p>{{ business.description }}</p>
+            <a href="{{ url_for('business.manage', business_id=business.id) }}">Manage</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('business.create') }}" class="btn">Add New Business</a>
+</div>
+{% endblock %}

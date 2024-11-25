@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block head %}{% endblock head %}
+{% block content %}
+<h1>Privacy Policy</h1>
+    <p>Your privacy is important to us. Here’s how we handle your data:</p>
+    <ul>
+        <li>We collect personal data to enhance your experience.</li>
+        <li>Your data is stored securely and not shared without consent.</li>
+        <li>You can request deletion of your data at any time.</li>
+        <li>We use cookies to improve website functionality and provide personalized services.</li>
+    </ul>
+    <a href="{{ url_for('auth.register') }}">Back to Registration</a>
+
+{% endblock content %}

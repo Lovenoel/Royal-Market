@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block head %}{% endblock head %}
+{% block content %}
+<div>
+    <h1>Promotions</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Discount</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for promotion in promotions %}
+            <tr>
+            <td>{{ promotion.name }}</td>
+            <td>{{ promotion.discount }}</td>
+            <td>{{ promotion.start_date }}</td>
+            <td>{{ promotion.end_date }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

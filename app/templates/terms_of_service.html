@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block head %}{% endblock head %}
+{% block content %}
+
+<h1>Terms of Service</h1>
+    <p>Welcome to our platform. By using our services, you agree to the following terms:</p>
+    <ul>
+        <li>Users must provide accurate information during registration.</li>
+        <li>Businesses are responsible for the accuracy of their product listings.</li>
+        <li>Unauthorized use of the platform may result in account suspension.</li>
+        <li>The platform is not liable for disputes between users and businesses.</li>
+    </ul>
+    <a href="{{ url_for('auth.register') }}">Back to Registration</a>
+
+{% endblock content %}

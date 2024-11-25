@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block head %}{% endblock head %}
+{% block content %}
+<div class="container">
+        <h1>Login</h1>
+        <form  action="{{ url_for('auth.login', next=next_page) }}" autocomplete="off" method="POST">
+            {{ form.hidden_tag() }}
+            <input type="hidden" name="next" value="{{ next_page }}">
+            <label for="email">Email:</label>
+            {{ form.email(size=32, autocomplete="off") }}
+            <label for="password">Password:</label>
+            {{ form.password(size=32, autocomplete="off") }}
+
+            <div class="checkbox-group">
+            </div>
+            <label for="remember">Remember Me:</label>
+            {{ form.remember() }}
+            {{ form.submit() }}
+        </form>
+        <small class="text-muted ml-2">
+            <a href="#">Forgot password</a>
+        </small>
+        <div class="border-top pt-3">
+        <small class="text-muted">
+            <h3>Need an account? <a class="ml-2" href="{{ url_for('auth.register') }}">Sign Up Now</a></h3>
+        </small>
+    </div>
+    </div>
+    
+{% endblock content %}

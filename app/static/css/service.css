@@ -1,0 +1,41 @@
+.service-table {
+  width: 100%;
+  margin: 20px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.service-table th {
+  background-color: #28a745;
+  color: white;
+}
+
+.service-table td {
+  padding: 12px;
+}
+
+.service-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.service-form label {
+  font-weight: bold;
+}
+
+.service-form input, .service-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.service-form button {
+  width: 100%;
+}
