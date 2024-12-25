@@ -30,3 +30,7 @@ class Product(BaseModel):
         db.Integer,
         default = 0
     )
+
+    # Relationships
+    category = db.relationship('Category', back_populates='product')
+    reviews = db.relationship('Reviews', back_populates='product')

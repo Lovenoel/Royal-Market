@@ -18,6 +18,9 @@ class User(BaseModel):
     last_name = db.Column(db.String(255))
     email_verified = db.Column(db.Boolean, default=False)
 
+    # Relationships
+    reviews = db.relationship('Reviews', back_populates='user')
+
     def __init__(self, username, email, password, first_name=None, last_name=None):
         """Initialize a User instance"""
         self.username = username
